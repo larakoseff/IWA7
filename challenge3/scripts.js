@@ -12,16 +12,16 @@ const divider = '----------------------------------'
 
 const leoNewBalance = leoBalance*-1
 const sarahNewBalance = sarahBalance*-1
-const owed = (parseInt(leoNewBalance + sarahNewBalance))
-const owedThousand = owed.toLocaleString()
-const leo = ` ${leoName} ${leoSurname.trim()} (Owed R  ${leoNewBalance.toFixed(2)}')'
+const owed = (parseFloat(leoNewBalance + sarahNewBalance))
+const leo = ` ${leoName} ${leoSurname.trim()} (Owed: R ${leoNewBalance.toFixed(2)})
 `
-const sarah =`${sarahName.trim()} ${sarahSurname} (Owed R ${sarahNewBalance.toFixed(2)}')'
+const sarah =`${sarahName.trim()} ${sarahSurname} (Owed: R ${sarahNewBalance.toFixed(2)})
 
 `
 const total =  `Total amount owed:`
 const result = `${leo} ${sarah} ${divider} 
-   ${total}  R${owed.toFixed(2)} 
+   ${total}  R ${owed.toLocaleString("eu-EU", {
+    minimumFractionDigits: 2})} 
  ${divider}`
 
 console.log(result)
