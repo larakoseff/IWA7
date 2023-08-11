@@ -10,10 +10,18 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
-const owed = parseInt('R' + leoBalance + sarahBalance)
-const leo = "{leoName} + {leoSurname} + \"Owed\" + \"R\" + {sarahBalance}"
-const sarah = "{leoName} + {surname} + \"Owed\" + \"R\" + {sarahBalance}"
-const total = "Total amount owed: "
-const result = leo + sarah + divider + divider + total + owed + divider
+const leoNewBalance = leoBalance*-1
+const sarahNewBalance = sarahBalance*-1
+const owed = (parseInt(leoNewBalance + sarahNewBalance))
+const owedThousand = owed.toLocaleString()
+const leo = ` ${leoName} ${leoSurname.trim()} (Owed R  ${leoNewBalance.toFixed(2)}')'
+`
+const sarah =`${sarahName.trim()} ${sarahSurname} (Owed R ${sarahNewBalance.toFixed(2)}')'
+
+`
+const total =  `Total amount owed:`
+const result = `${leo} ${sarah} ${divider} 
+   ${total}  R${owed.toFixed(2)} 
+ ${divider}`
 
 console.log(result)
