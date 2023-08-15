@@ -1,9 +1,14 @@
 const nickname = "Timmy";
 const firstname = "Timothy";
-const message = nickname || firstname ? `, ${nickname}!` || `, ${firstname}!` :  '!'
+const user = nickname || firstname 
+const message = nickname || firstname 
+
+if (!user)  {
+    console.log ('Good Morning!')
+}
 
 
-console.log(`Good morning${message}`)
+console.log(`Good morning ${message}!`)
 
     
 // const nickname= "Timmy";
