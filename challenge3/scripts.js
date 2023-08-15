@@ -16,6 +16,8 @@ const owed = (parseFloat(leoNewBalance + sarahNewBalance))
 const leo = `${leoName} ${leoSurname.trim()} (Owed: R ${leoNewBalance.toFixed(2)})`
 const sarah =`\n${sarahName.trim()} ${sarahSurname} (Owed: R ${sarahNewBalance.toFixed(2)})\n\n`
 const total =  `Total amount owed:`
-const result = `${leo} ${sarah} ${divider} \n   ${total}  R ${owed.toLocaleString("en-ZA", {minimumFractionDigits: 2})} \n ${divider}`
+const result = `${leo} ${sarah} ${divider} \n   ${total}  R ${owed.toLocaleString("en-ZA", {minimumFractionDigits: 2}).replace(',', '.')} \n ${divider}`
+
+
 
 console.log(result)
